@@ -12,6 +12,8 @@ nlp = spacy.load("en_core_web_sm")
 
  
 def extract_topic(body_text, subreddit,spaCy=False,debug=False):
+    if body_text=="[deleted]":
+        return []
     body_text=re.sub(r"""(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])""", ' ', body_text, flags=re.MULTILINE)
     # body_text=re.sub(r"""(?:__|[*#])|\[(.*?)\]\(.*?\)""", ' ', body_text, flags=re.MULTILINE)
     body_text=re.sub(r"""\^""", ' ', body_text, flags=re.MULTILINE)
@@ -36,6 +38,10 @@ def extract_topic(body_text, subreddit,spaCy=False,debug=False):
             nouns[n]=nouns[n].replace(word,"")
         nouns[n]=nouns[n].strip()
         nouns[n]=re.sub(r"""\s\s+""", ' ', nouns[n], flags=re.MULTILINE)
+        nouns[n]=nouns[n].strip()
+        if nouns[n] =="":
+            del nouns[n]
+            continue
         nouns[n]+="_sep_"+subreddit
 
     if debug:
