@@ -12,8 +12,7 @@ import sys
 
 for line in sys.stdin:
     j_i=json.loads(line)
-    if j_i["subreddit"] == '[deleted]':
-        print(j_i["subreddit"],1,sep="\t")
+    print(j_i["subreddit"],1,sep="\t")
     # print("j_i[ups]",j_i["ups"])
     # print("j_i[downs]",j_i["downs"])
     # print("j_i[score]",j_i["score"])
