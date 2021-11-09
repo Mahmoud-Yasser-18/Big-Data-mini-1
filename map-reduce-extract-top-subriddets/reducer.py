@@ -6,7 +6,7 @@ word = None
 count = 0
 
 for line in sys.stdin:
-    key, value = line.strip().split()
+    key, value = line.strip().split(sep='\t')
     if word is None:
         word = key
     elif word != key:
@@ -14,5 +14,4 @@ for line in sys.stdin:
         word = key
         count = 0
     count += int(value)
-
 print(word, count, sep='\t')

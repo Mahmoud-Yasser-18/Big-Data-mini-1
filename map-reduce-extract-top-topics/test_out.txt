@@ -1021,7 +1021,6 @@ toonami_sep_touhou	1
 amount_sep_CrazyIdeas	1
 land_sep_CrazyIdeas	1
 earth_sep_CrazyIdeas	1
-_sep_CFB	1
 all_sep_CFB	1
 love_sep_AskWomen	1
 surgery_sep_AskWomen	1
@@ -1921,7 +1920,6 @@ link]( ) 2136 /u/reostra_sep_subredditreports	1
 everyone_sep_subredditreports	1
 superpower_sep_subredditreports	1
 no one_sep_subredditreports	1
-_sep_subredditreports	1
 life or death situation_sep_subredditreports	1
 man_sep_subredditreports	1
 heaven_sep_subredditreports	1
@@ -5854,7 +5852,6 @@ time_sep_DestinyTheGame	1
 limit_sep_DestinyTheGame	1
 super cheesy_sep_DestinyTheGame	1
 legal, financial, and social independence_sep_atheism	1
-_sep_CFB	1
 bo wallace_sep_CFB	1
 subreddit_sep_whowouldwin	1
 units_sep_politics	1
@@ -8624,7 +8621,6 @@ baptist_sep_Christianity	1
 anyone_sep_foreverkailyn	1
 screen shot_sep_foreverkailyn	1
 phone_sep_foreverkailyn	1
-_sep_AskReddit	1
 not op_sep_malefashionadvice	1
 same pair_sep_malefashionadvice	1
 jeans_sep_malefashionadvice	1
@@ -9604,7 +9600,6 @@ buzzard_sep_GrandTheftAutoV	1
 hunter_sep_GrandTheftAutoV	1
 missions_sep_GrandTheftAutoV	1
 coke_sep_movies	1
-_sep_ffxiv	1
 contest_sep_polandball	1
 justextra 120 pixels_sep_buildapcsales	1
 2560x1440_sep_buildapcsales	1
@@ -18475,7 +18470,6 @@ myself_sep_keto	1
 bit_sep_keto	1
 fat_sep_keto	1
 muscle mass_sep_keto	1
-_sep_pics	1
 way_sep_pics	1
 man_sep_pics	1
 hell_sep_news	1
@@ -21771,7 +21765,6 @@ brother/sister_sep_islam	1
 top photo_sep_reddevils	1
 anything_sep_Tinder	1
 a_sep_Tinder	1
-_sep_hockey	1
 mass_sep_Christianity	1
 church_sep_Christianity	1
 choir_sep_Christianity	1
@@ -25315,7 +25308,6 @@ own car_sep_funny	1
 car_sep_funny	1
 some_sep_funny	1
 car_sep_funny	1
-_sep_funny	1
 bar_sep_funny	1
 most people_sep_funny	1
 4 hours_sep_funny	1
@@ -26116,7 +26108,6 @@ cs_sep_GlobalOffensive	1
 thanks_sep_GlobalOffensive	1
 all_sep_GlobalOffensive	1
 help_sep_GlobalOffensive	1
-_sep_WritingPrompts	1
 google 'statoshi_sep_Bitcoin	1
 stats_sep_Bitcoin	1
 a_sep_Bitcoin	1
@@ -31581,7 +31572,6 @@ kid_sep_childfree	1
 help_sep_childfree	1
 back_sep_childfree	1
 kids_sep_childfree	1
-_sep_childfree	1
 descendants_sep_childfree	1
 so many horror stories_sep_childfree	1
 grandparents_sep_childfree	1
@@ -40764,7 +40754,6 @@ anything_sep_EliteDangerous	1
 game_sep_EliteDangerous	1
 oneplace_sep_pcmasterrace	1
 build_sep_pcmasterrace	1
-_sep_pcmasterrace	1
 monitor_sep_pcmasterrace	1
 kb+m_sep_pcmasterrace	1
 anything_sep_DarkNetMarkets	1
@@ -41510,7 +41499,6 @@ purposes_sep_todayilearned	1
 new art_sep_todayilearned	1
 extent_sep_todayilearned	1
 party_sep_teenagers	1
-_sep_todayilearned	1
 bed_sep_todayilearned	1
 moisture_sep_todayilearned	1
 eyeballs_sep_todayilearned	1
@@ -44736,7 +44724,6 @@ true zero knowledge protocols_sep_crypto	1
 skinny female_sep_gaming	1
 lol thanks_sep_movies	1
 "major" movies_sep_movies	1
-_sep_jailbreak	1
 people_sep_pics	1
 r_sep_pics	1
 /pics_sep_pics	1
@@ -45499,7 +45486,6 @@ d_sep_Wishlist	1
 wonderful new year_sep_Wishlist	1
 equipment_sep_PercyJacksonRP	1
 accent_sep_videos	1
-_sep_funny	1
 crazy house party_sep_funny	1
 rico's residence_sep_funny	1
 parents_sep_funny	1
@@ -49780,7 +49766,6 @@ egg problem_sep_worldnews	1
 end_sep_worldnews	1
 day_sep_worldnews	1
 buttons_sep_worldnews	1
-_sep_worldnews	1
 plenty_sep_worldnews	1
 blame_sep_worldnews	1
 russia_sep_worldnews	1

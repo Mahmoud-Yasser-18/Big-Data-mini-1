@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import os
 import json
 import sys
@@ -12,11 +13,10 @@ import sys
 
 for line in sys.stdin:
     j_i=json.loads(line)
-    print(j_i["subreddit"],1,sep="\t")
-    # print("j_i[ups]",j_i["ups"])
-    # print("j_i[downs]",j_i["downs"])
-    # print("j_i[score]",j_i["score"])
-    # print(json.dumps(j_i, indent=4))
-
+    try:
+        print(j_i["subreddit"],1,sep="\t")
+    except:
+        continue
+    
 
 

@@ -33,21 +33,21 @@ def extract_topic(body_text, subreddit,spaCy=False,debug=False):
     start = time.time()    
     processed_body = nlp(body_text)
     nouns = [ " "+str(noun).lower()+" " for noun in processed_body.noun_chunks if " "+str(noun).lower()+" " not in forbidden_words]
+    results=[]
     for n in range(len(nouns)):
         for word in forbidden_words:
             nouns[n]=nouns[n].replace(word,"")
         nouns[n]=nouns[n].strip()
         nouns[n]=re.sub(r"""\s\s+""", ' ', nouns[n], flags=re.MULTILINE)
         nouns[n]=nouns[n].strip()
-        if nouns[n] =="":
-            del nouns[n]
-            continue
-        nouns[n]+="_sep_"+subreddit
+        
+        if nouns[n] !="":
+            results.append(nouns[n]+"_sep_"+subreddit)
 
     if debug:
         print("time taken for spaCy:")
         print(time.time()-start)
-    return nouns 
+    return results 
 if __name__=="__main__":
     print("Using NLTK:")
     print(extract_topic("Very fast, thank you!","Asmerriddit",debug=True))
