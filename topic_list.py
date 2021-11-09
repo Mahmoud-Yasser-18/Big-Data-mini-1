@@ -14,9 +14,9 @@ nlp = spacy.load("en_core_web_sm")
 def extract_topic(body_text, subreddit,spaCy=False,debug=False):
     body_text=re.sub(r"""(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])""", ' ', body_text, flags=re.MULTILINE)
     # body_text=re.sub(r"""(?:__|[*#])|\[(.*?)\]\(.*?\)""", ' ', body_text, flags=re.MULTILINE)
-    body_text=re.sub(r"""\^""", '', body_text, flags=re.MULTILINE)
+    body_text=re.sub(r"""\^""", ' ', body_text, flags=re.MULTILINE)
     body_text=re.sub(r"""\-""", ' ', body_text, flags=re.MULTILINE)
-    body_text=re.sub(r"""\|""", '', body_text, flags=re.MULTILINE)
+    body_text=re.sub(r"""\|""", ' ', body_text, flags=re.MULTILINE)
     body_text=re.sub(r"""\s\s+""", ' ', body_text, flags=re.MULTILINE)
     body_text=" "+body_text+" "
     if not spaCy:
