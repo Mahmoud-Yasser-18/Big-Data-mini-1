@@ -1,7 +1,7 @@
-#!/usr/bin/python3
 import os
 import json
 import sys
+from topic_list import extract_topic
 
 # Notes :
 # 1. All Down votes are 0
@@ -10,11 +10,16 @@ import sys
 
 # Option or NLP: NLTK, spaCy
 
-f = open("./top_subreddits.txt", "r")
-top_subreddits=[line.split("\t")[1].replace("\n","") for line in f.readlines() if line != "\t\n"]
-
 
 for line in sys.stdin:
     j_i=json.loads(line)
-    if j_i["subreddit"] in top_subreddits:
-        print(j_i["author"]+"_sep_"+j_i["subreddit"],1,sep="\t")
+    topics = extract_topic(j_i["body"],j_i["subreddit"],spaCy=True)
+    for topic in topics:
+        print(topic,1,sep="\t")
+    # print("j_i[ups]",j_i["ups"])
+    # print("j_i[downs]",j_i["downs"])
+    # print("j_i[score]",j_i["score"])
+    # print(json.dumps(j_i, indent=4))
+
+
+
