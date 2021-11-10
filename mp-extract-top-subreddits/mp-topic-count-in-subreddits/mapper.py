@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import os
 import json
 import sys
@@ -11,13 +12,17 @@ from topic_list import extract_topic
 # Option or NLP: NLTK, spaCy
 
 f = open("./top_subreddits.txt", "r")
-top_subreddits=[line.split('\t')[1].replace('/n','') for line in f.readlines() if line != '/t/n']
+top_subreddits=[line.split("\t")[1].replace("\n","") for line in f.readlines() if line != "\t\n"]
+
+
 for line in sys.stdin:
     j_i=json.loads(line)
-    if j_i["subreddit"] in top_subreddits :
+    if j_i["subreddit"] in top_subreddits:
         topics = extract_topic(j_i["body"],j_i["subreddit"],spaCy=True)
         for topic in topics:
             print(topic,1,sep="\t")
+
+        
 
 
 
