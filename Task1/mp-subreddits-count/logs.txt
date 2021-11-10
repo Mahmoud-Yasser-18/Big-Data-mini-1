@@ -1,0 +1,4 @@
+2021-11-10 21:55:14,650 WARN streaming.StreamJob: -file option is deprecated, please use generic option -files instead.
+File: file:/home/mahmoud/Desktop/CIE427/mini-projects/mini-project-1/Big-Data-mini-1/Task1/mp-subreddits-count/reucer.py does not exist.
+Try -help for more information
+Streaming Command Failed!

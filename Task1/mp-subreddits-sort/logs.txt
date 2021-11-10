@@ -1,0 +1,8 @@
+2021-11-10 21:51:31,012 WARN streaming.StreamJob: -file option is deprecated, please use generic option -files instead.
+packageJobJar: [./mp-subreddits-sort//mapper.py, ./mp-subreddits-sort//reducer.py] [] /tmp/streamjob320641628587035255.jar tmpDir=null
+2021-11-10 21:51:31,378 INFO impl.MetricsConfig: Loaded properties from hadoop-metrics2.properties
+2021-11-10 21:51:31,434 INFO impl.MetricsSystemImpl: Scheduled Metric snapshot period at 10 second(s).
+2021-11-10 21:51:31,434 INFO impl.MetricsSystemImpl: JobTracker metrics system started
+2021-11-10 21:51:31,450 WARN impl.MetricsSystemImpl: JobTracker metrics system already initialized!
+2021-11-10 21:51:31,458 ERROR streaming.StreamJob: Error Launching job : Output directory file:/home/mahmoud/Desktop/CIE427/mini-projects/mini-project-1/Big-Data-mini-1/Task1/mp-subreddits-sort/output already exists
+Streaming Command Failed!
