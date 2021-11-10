@@ -7,14 +7,19 @@ import sys
 # 1. All Down votes are 0
 # 2. All Controversiality are 0
 
-
 # Option or NLP: NLTK, spaCy
+from collections import defaultdict
 
-f = open("./mp-author-count-in-subreddits/part-00000", "r")
-top_subreddits=[line.split("\t")[1].replace("\n","") for line in f.readlines() if line != "\t\n"]
-
+f = open("./mp-author-topic-count-in-subreddits/part-00000", "r")
+#f = open("./part-00000", "r")
+top_topics_subreddits=[line.split("\t")[1].split("_sep_") for line in f.readlines() if line != "\t\n"]
+global_dict = defaultdict(list)
+for topic, subreddit in top_topics_subreddits:
+    global_dict[subreddit.replace("\n","")].append(topic)
 
 for line in sys.stdin:
     j_i=json.loads(line)
-    if j_i["subreddit"] in top_subreddits:
-        print(j_i["author"]+"_sep_"+j_i["subreddit"],1,sep="\t")
+    if j_i["subreddit"] in global_dict.keys():
+        for topic in global_dict[j_i["subreddit"]]:
+            if topic in j_i["body"].lower(): 
+                print(j_i["author"] +"_sep_"+j_i["subreddit"]+"_sep_"+topic,1,sep="\t")
