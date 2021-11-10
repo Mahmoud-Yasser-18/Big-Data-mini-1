@@ -94,3 +94,33 @@ then
 fi
 
 echo "    Done: Count the authors 😉, see the logs on logs.txt in the map reduce folder "
+
+####################################################################################################################
+####################################################################################################################
+
+
+echo "  Extracting top 10 authors for the top 10 subreddits 🚀🚀"
+
+export working_path="./mp-authors-sort-subreddits/"
+export input_path="./mp-authors-count-in-subreddits/output/part-00000"
+{
+$hadoop_home/bin/hadoop jar $hadoop_home/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar \
+-input $input_path \
+-output $working_path/output \
+-file $working_path/mapper.py \
+-file $working_path/reducer.py \
+-mapper 'python mapper.py' \
+-reducer 'python reducer.py' 
+}&> $working_path/logs.txt
+rm mapper.py 
+rm reducer.py
+
+export check_word=$(tail -1 $working_path/logs.txt)
+
+if [[ "$check_word" = *"Failed"* ]]
+then
+    echo "    Failed: Getting Top 10 the authors 😭😭, see the logs on logs.txt in the map reduce folder "
+    exit 1
+fi
+
+echo "    Done: Getting Top 10 authors  😉, see the logs on logs.txt in the map reduce folder "
