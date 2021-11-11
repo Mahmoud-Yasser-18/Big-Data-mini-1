@@ -209,8 +209,6 @@ echo "    Done: Extracting top 10 topics  😉, see the logs on logs.txt in the 
 
 
 echo "  Getting 10 top authors in top 10 topics in top 10 subreddits 🚀🚀"
-echo "    Task: Count authors in top 10 topics in top 10 subreddits 🚀"
-
 export working_path="./mp-author-topic-count-in-subreddits/"
 export input_path="./sample"
 {
@@ -242,7 +240,7 @@ echo "    Done: Count authors in top 10 topics in top 10 subreddits 😉, see th
 echo "    Task: Extracting top 10 authors in top 10 topics in top 10 subreddits 🚀🚀"
 
 export working_path="./mp-author-topic-sort-subreddits/"
-export input_path="./mp-topic-count-in-subreddits/output/part-00000"
+export input_path="./mp-author-topic-count-in-subreddits/output/part-00000"
 touch $working_path/logs.txt
 
 {
