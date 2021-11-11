@@ -1,5 +1,7 @@
 #
 # Cleaning outputs if exits
+echo "TASK 1 🚀🚀🚀🚀🚀🚀🚀"
+
 echo "Removing files first 🤌🤌🤌"
 rm -rf ./mp-author-sort-subreddits/output
 rm -rf ./mp-author-count-in-subreddits/output
