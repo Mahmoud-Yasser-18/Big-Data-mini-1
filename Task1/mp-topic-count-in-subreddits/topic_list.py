@@ -24,7 +24,7 @@ def extract_topic(body_text, subreddit,spaCy=False,debug=False):
     if not spaCy:
         start = time.time()    
         word_tokens_body = word_tokenize(body_text)
-        filtered_sentence = [w+"_"+subreddit for w in word_tokens_body if (not w.lower() in stop_words) and (w.lower() not in forbidden_words)]
+        filtered_sentence = [w+"_sep_"+subreddit for w in word_tokens_body if (not w.lower() in stop_words) and (w.lower() not in forbidden_words)]
         if debug:
             print("time taken for NLTK:")
             print(time.time()-start)
@@ -47,7 +47,10 @@ def extract_topic(body_text, subreddit,spaCy=False,debug=False):
             nouns[n]= " ".join([token.text for token in temp[:-1] if str(token.pos_) in ["NOUN","ADJ"] ]+[temp[-1].lemma_])
         
         if nouns[n] !="":
-            results.append(subreddit+"_sep_"+nouns[n])
+            if subreddit:
+                results.append(subreddit+"_sep_"+nouns[n])
+            else:
+                results.append(nouns[n])
 
     if debug:
         print("time taken for spaCy:")

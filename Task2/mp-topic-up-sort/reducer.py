@@ -3,16 +3,15 @@
 import sys
 
 word = None
-count = 0
-
-f = open("./mp-author-sort-subreddits/part-00000", "r")
-top_subreddits=[line.split("\t")[1].replace("\n","") for line in f.readlines() if line != "\t\n"]
-top_subreddits_count={t:0 for t in top_subreddits} 
+count_up = 0
+count_down = 0
 
 for line in sys.stdin:
-    if line=="\t\n":
-        continue
-    if top_subreddits_count[line.split("\t")[1].split("_sep_")[1].replace("\n","")]>=10:
-        continue
-    print(line.replace("\n",""))
-    top_subreddits_count[line.split("\t")[1].split("_sep_")[1].replace("\n","")]+=1
+    if line.split("\t")[1][:3]=="__u" and count_up<=10:
+        print(line)
+        count_up += 1
+    if line.split("\t")[1][:3]=="__d" and count_down<=10:
+        print(line)
+        count_down += 1
+    if count_down == 10 and  count_up == 10:
+        break

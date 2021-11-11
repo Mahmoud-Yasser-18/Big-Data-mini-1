@@ -12,16 +12,15 @@ from topic_list import extract_topic
 
 # Option or NLP: NLTK, spaCy
 
-f = open("./mp-topic-count-in-subreddits/part-00000", "r")
-top_subreddits=[line.split("\t")[1].replace("\n","") for line in f.readlines() if line != "\t\n"]
-
-
 for line in sys.stdin:
     j_i=json.loads(line)
-    if j_i["subreddit"] in top_subreddits:
-        topics = extract_topic(j_i["body"],j_i["subreddit"],spaCy=True)
+    topics = extract_topic(j_i["body"],None,spaCy=True)
+    if j_i['ups']>0:
         for topic in topics:
-            print(topic,1,sep="\t")
+            print("__up__"+topic,j_i['ups'],sep="\t")
+    else :
+        for topic in topics:
+            print("__down__"+topic,j_i['ups'],sep="\t")
 
         
 
