@@ -15,7 +15,7 @@ echo "  Getting Top topics that has the most upvotes and the most down votes ðŸš
 echo "    Task: Counting upvotes& downvotes per topic ðŸš€"
 
 export working_path="./mp-topic-up-count/"
-export input_path="./sample"
+export input_path="../sample"
 {
 $hadoop_home/bin/hadoop jar $hadoop_home/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar \
 -input $input_path \

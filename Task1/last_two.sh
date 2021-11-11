@@ -6,7 +6,7 @@ export hadoop_home="/home/mahmoud/Desktop/CIE427/hadoop-3.3.1/"
 rm -rf ./mp-author-topic-count-in-subreddits/output
 rm -rf ./mp-author-topic-sort-subreddits/output
 export working_path="./mp-author-topic-count-in-subreddits/"
-export input_path="./sample"
+export input_path="../sample"
 {
 $hadoop_home/bin/hadoop jar $hadoop_home/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar \
 -input $input_path \

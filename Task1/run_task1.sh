@@ -25,7 +25,7 @@ export hadoop_home="/home/mahmoud/Desktop/CIE427/hadoop-3.3.1/"
 echo "  Getting the top subreddits 🚀🚀"
 echo "    Counting each subreddits occurance 🚀"
 export working_path="./mp-subreddits-count/"
-export input_path="./sample"
+export input_path="../sample"
 {
 $hadoop_home/bin/hadoop jar $hadoop_home/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar \
 -input $input_path \
@@ -86,7 +86,7 @@ echo "  Getting top authos in top subreddits 🚀🚀"
 echo "    Task: Count the authors 🚀"
 
 export working_path="./mp-author-count-in-subreddits/"
-export input_path="./sample"
+export input_path="../sample"
 {
 $hadoop_home/bin/hadoop jar $hadoop_home/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar \
 -input $input_path \
@@ -148,7 +148,7 @@ echo "  Getting top topics in top subreddits 🚀🚀"
 echo "    Task: Count the topics 🚀"
 
 export working_path="./mp-topic-count-in-subreddits/"
-export input_path="./sample"
+export input_path="../sample"
 {
 $hadoop_home/bin/hadoop jar $hadoop_home/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar \
 -input $input_path \
@@ -212,7 +212,7 @@ echo "    Done: Extracting top 10 topics  😉, see the logs on logs.txt in the 
 
 echo "  Getting 10 top authors in top 10 topics in top 10 subreddits 🚀🚀"
 export working_path="./mp-author-topic-count-in-subreddits/"
-export input_path="./sample"
+export input_path="../sample"
 {
 $hadoop_home/bin/hadoop jar $hadoop_home/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar \
 -input $input_path \

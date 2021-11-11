@@ -17,7 +17,7 @@ echo "  Getting rate of replies per controversiality 🚀🚀"
 echo "    Task: Counting replies per controversiality 🚀"
 
 export working_path="./mp-conv-count/"
-export input_path="./sample"
+export input_path="../sample"
 {
 $hadoop_home/bin/hadoop jar $hadoop_home/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar \
 -input $input_path \
