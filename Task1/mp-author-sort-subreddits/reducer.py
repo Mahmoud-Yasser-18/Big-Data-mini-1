@@ -5,14 +5,31 @@ import sys
 word = None
 count = 0
 
-f = open("./mp-author-sort-subreddits/part-00000", "r")
-top_subreddits=[line.split("\t")[1].replace("\n","") for line in f.readlines() if line != "\t\n"]
-top_subreddits_count={t:0 for t in top_subreddits} 
+# f = open("./mp-author-sort-subreddits/part-00000", "r")
+f = open("./part-00000", "r")
+top_subreddits=[line.split("\t")[0].replace("\n","") for line in f.readlines() if line != "\t\n"]
+top_subreddits_key_value={t:[] for t in top_subreddits} 
 
 for line in sys.stdin:
-    if line=="\t\n":
+    try:
+        key, value = line.strip().split(sep='\t')
+        value=int(value)
+    except:
         continue
-    if top_subreddits_count[line.split("\t")[1].split("_sep_")[1].replace("\n","")]>=10:
-        continue
-    print(line.replace("\n",""))
-    top_subreddits_count[line.split("\t")[1].split("_sep_")[1].replace("\n","")]+=1
+    try:
+        subr= line.split("\t")[0].split("_sep_")[1].replace("\n","")
+        if value>top_subreddits_key_value[subr][0][0] or len(top_subreddits_key_value)<10:
+            top_subreddits_key_value[subr].append((value,key))
+            top_subreddits_key_value[subr]=sorted(top_subreddits_key_value[subr])[-10:]
+            
+    except:
+        try:
+            subr= line.split("\t")[0].split("_sep_")[1].replace("\n","")
+            top_subreddits_key_value[subr].append((value,key))
+        except:
+            pass
+
+for k,v in top_subreddits_key_value.items():
+    #v=[valus,key]
+    for record in v:
+        print(record[1],record[0],sep='\t')

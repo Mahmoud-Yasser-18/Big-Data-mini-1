@@ -12,7 +12,7 @@ for line in sys.stdin:
     except:
         continue
     try:
-        if value > top_records[0][0]:
+        if value > top_records[0][0] or len(top_records)<10:
             top_records.append((value,key))
             top_records=sorted(top_records)[-10:]
     except:
