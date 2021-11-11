@@ -11,7 +11,7 @@ rm -rf './mp-conv-sort/logs.txt'
 
 
 echo "Starting maps-reduce jobs 🚀🚀🚀🚀"
-export hadoop_home="/home/mahmoud/Desktop/CIE427/hadoop-3.3.1/"
+export hadoop_home="/usr/local/hadoop-3.3.1/"
 
 echo "  Getting rate of replies per controversiality 🚀🚀"
 echo "    Task: Counting replies per controversiality 🚀"
