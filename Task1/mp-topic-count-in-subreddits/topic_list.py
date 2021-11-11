@@ -47,7 +47,7 @@ def extract_topic(body_text, subreddit,spaCy=False,debug=False):
             nouns[n]= " ".join([token.text for token in temp[:-1] if str(token.pos_) in ["NOUN","ADJ"] ]+[temp[-1].lemma_])
         
         if nouns[n] !="":
-            results.append(nouns[n]+"_sep_"+subreddit)
+            results.append(subreddit+"_sep_"+nouns[n])
 
     if debug:
         print("time taken for spaCy:")

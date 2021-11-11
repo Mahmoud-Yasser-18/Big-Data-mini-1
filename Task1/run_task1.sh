@@ -7,6 +7,16 @@ rm -rf ./mp-subreddits-count/output
 rm -rf ./mp-subreddits-sort/output
 rm -rf ./mp-topic-count-in-subreddits/output
 rm -rf ./mp-topic-subreddits-sort/output
+rm -rf ./mp-author-topic-count-in-subreddits/output
+rm -rf ./mp-author-topic-sort-subreddits/output
+rm -rf ./mp-author-sort-subreddits/logs.txt
+rm -rf ./mp-author-count-in-subreddits/logs.txt
+rm -rf ./mp-subreddits-count/logs.txt
+rm -rf ./mp-subreddits-sort/logs.txt
+rm -rf ./mp-topic-count-in-subreddits/logs.txt
+rm -rf ./mp-topic-subreddits-sort/logs.txt
+rm -rf ./mp-author-topic-count-in-subreddits/logs.txt
+rm -rf ./mp-author-topic-sort-subreddits/logs.txt
 echo "Starting maps-reduce jobs 🚀🚀🚀🚀"
 export hadoop_home="/home/mahmoud/Desktop/CIE427/hadoop-3.3.1/"
 
@@ -190,6 +200,8 @@ then
     echo "    Failed: Extracting top 10 topics 😭😭, see the logs on logs.txt in the map reduce folder."
     exit 1
 fi
+cp './mp-topic-subreddits-sort/output/part-00000' './mp-author-topic-count-in-subreddits/'
+cp './mp-topic-subreddits-sort/output/part-00000' './mp-author-topic-sort-subreddits/'
 
 echo "    Done: Extracting top 10 topics  😉, see the logs on logs.txt in the map reduce folder."
 ####################################################################################################################

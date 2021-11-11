@@ -14,12 +14,11 @@ f = open("./mp-author-topic-count-in-subreddits/part-00000", "r")
 #f = open("./part-00000", "r")
 top_topics_subreddits=[line.split("\t")[1].split("_sep_") for line in f.readlines() if line != "\t\n"]
 global_dict = defaultdict(list)
-for topic, subreddit in top_topics_subreddits:
-    global_dict[subreddit.replace("\n","")].append(topic)
-
+for subreddit,topic  in top_topics_subreddits:
+    global_dict[subreddit.replace("\n","")].append(topic.replace("\n",""))
 for line in sys.stdin:
     j_i=json.loads(line)
     if j_i["subreddit"] in global_dict.keys():
         for topic in global_dict[j_i["subreddit"]]:
-            if topic in j_i["body"].lower(): 
+            if topic.lower() in j_i["body"].lower(): 
                 print(j_i["author"] +"_sep_"+j_i["subreddit"]+"_sep_"+topic,1,sep="\t")

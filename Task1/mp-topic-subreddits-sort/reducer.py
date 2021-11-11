@@ -12,7 +12,7 @@ top_subreddits_count={t:0 for t in top_subreddits}
 for line in sys.stdin:
     if line=="\t\n":
         continue
-    if top_subreddits_count[line.split("\t")[1].split("_sep_")[1].replace("\n","")]>=10:
+    if top_subreddits_count[line.split("\t")[1].split("_sep_")[0].replace("\n","")]>=10:
         continue
     print(line.replace("\n",""))
-    top_subreddits_count[line.split("\t")[1].split("_sep_")[1].replace("\n","")]+=1
+    top_subreddits_count[line.split("\t")[1].split("_sep_")[0].replace("\n","")]+=1
