@@ -15,7 +15,10 @@ top_subreddits_file = open ('./mp-emotion-count/part-00000','r')
 top_subreddits = [line.split("\t")[1].replace("\n","") for line in top_subreddits_file.readlines() if line != "\t\n"]
 
 for line in sys.stdin:
-    j_i=json.loads(line)
+    try: 
+        j_i=json.loads(line)
+    except:
+        continue
     
     if j_i["subreddit"] in top_subreddits : 
         

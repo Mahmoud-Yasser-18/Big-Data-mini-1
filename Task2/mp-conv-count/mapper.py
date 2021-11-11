@@ -11,7 +11,10 @@ import sys
 # Option or NLP: NLTK, spaCy
 
 for line in sys.stdin:
-    j_i=json.loads(line)
+    try: 
+        j_i=json.loads(line)
+    except:
+        continue
     print(j_i['controversiality'],1,sep="\t")
 
 

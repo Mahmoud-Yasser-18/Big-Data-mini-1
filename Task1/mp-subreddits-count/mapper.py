@@ -12,7 +12,10 @@ import sys
 
 
 for line in sys.stdin:
-    j_i=json.loads(line)
+    try: 
+        j_i=json.loads(line)
+    except:
+        continue
     try:
         print(j_i["subreddit"],1,sep="\t")
     except:

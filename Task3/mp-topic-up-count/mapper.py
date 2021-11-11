@@ -13,7 +13,10 @@ from topic_list import extract_topic
 # Option or NLP: NLTK, spaCy
 
 for line in sys.stdin:
-    j_i=json.loads(line)
+    try: 
+        j_i=json.loads(line)
+    except:
+        continue
     topics = extract_topic(j_i["body"],None,spaCy=True)
     if j_i['ups']>0:
         for topic in topics:

@@ -17,7 +17,10 @@ top_subreddits=[line.split("\t")[1].replace("\n","") for line in f.readlines() i
 
 
 for line in sys.stdin:
-    j_i=json.loads(line)
+    try: 
+        j_i=json.loads(line)
+    except:
+        continue
     if j_i["subreddit"] in top_subreddits:
         topics = extract_topic(j_i["body"],j_i["subreddit"],spaCy=True)
         for topic in topics:

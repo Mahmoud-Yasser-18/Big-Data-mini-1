@@ -17,7 +17,10 @@ global_dict = defaultdict(list)
 for subreddit,topic  in top_topics_subreddits:
     global_dict[subreddit.replace("\n","")].append(topic.replace("\n",""))
 for line in sys.stdin:
-    j_i=json.loads(line)
+    try: 
+        j_i=json.loads(line)
+    except:
+        continue
     if j_i["subreddit"] in global_dict.keys():
         for topic in global_dict[j_i["subreddit"]]:
             if topic.lower() in j_i["body"].lower(): 
