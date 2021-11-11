@@ -78,6 +78,8 @@ cp './mp-subreddits-sort/output/part-00000' './mp-author-count-in-subreddits/'
 cp './mp-subreddits-sort/output/part-00000' './mp-author-sort-subreddits/'
 cp './mp-subreddits-sort/output/part-00000' './mp-topic-count-in-subreddits/'
 cp './mp-subreddits-sort/output/part-00000' './mp-topic-subreddits-sort//'
+cp './mp-subreddits-sort/output/part-00000' '../Task4/mp-emotion-count/'
+
 ####################################################################################################################
 ####################################################################################################################
 

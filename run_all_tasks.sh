@@ -26,6 +26,3 @@ echo .
 cd './Task4/'
 bash './run_task4.sh'
 cd ..
-echo .
-echo .
-echo . 
