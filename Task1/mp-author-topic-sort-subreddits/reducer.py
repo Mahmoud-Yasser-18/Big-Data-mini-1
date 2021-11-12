@@ -8,20 +8,34 @@ count = 0
 from collections import defaultdict
 
 
-f = open("./mp-author-topic-count-in-subreddits/part-00000", "r")
+#f = open("../mp-author-topic-count-in-subreddits/part-00000", "r")
+f = open("./part-00000", "r")
 
-top_topics_subreddits=[line.split("\t")[1].split("_sep_") for line in f.readlines() if line != "\t\n"]
+top_topics_subreddits=[line.split("\t")[0].split("_sep_") for line in f.readlines() if line != "\t\n"]
 global_dict = defaultdict(list)
-for subreddit,topic in top_topics_subreddits:
+for topic,subreddit in top_topics_subreddits:
     global_dict[subreddit.replace("\n","")].append(topic.replace("\n",""))
-top_subreddits_topic_count={subr:{t:0 for t in global_dict[subr]} for subr in global_dict.keys()}
+top_subreddits_topic_count={subr:{t:[] for t in global_dict[subr]} for subr in global_dict.keys()}
 
 for line in sys.stdin:
-    if line=="\t\n":
+    try:
+        key, value = line.strip().split(sep='\t')
+        value=int(value)
+    except:
         continue
-    if top_subreddits_topic_count[line.split("\t")[1].split("_sep_")[1].replace("\n","")][line.split("\t")[1].split("_sep_")[2].replace("\n","")]>=10:
-        continue
-    # if sum(sum(list(topic.values())) for dict(topic) in top_subreddits_topic_count.values())==1000:
-    #     break
-    print(line.replace("\n",""))
-    top_subreddits_topic_count[line.split("\t")[1].split("_sep_")[1].replace("\n","")][line.split("\t")[1].split("_sep_")[2].replace("\n","")]+=1
+    subr= key.split("_sep_")[1].replace("\n","")
+    topic= key.split("_sep_")[2].replace("\n","")
+    
+    if len(top_subreddits_topic_count[subr][topic])>0:    
+        if value>top_subreddits_topic_count[subr][topic][0][0] or len(top_subreddits_topic_count[subr][topic])<10:
+            top_subreddits_topic_count[subr][topic].append((value,key))
+            top_subreddits_topic_count[subr][topic]=sorted(top_subreddits_topic_count[subr][topic])[-10:]
+            
+    else:
+        top_subreddits_topic_count[subr][topic].append((value,key))
+
+for k,v in top_subreddits_topic_count.items():
+    # print(v)
+    for kr,vr in v.items():
+        for r in vr :
+            print(r[1],r[0],sep='\t')
