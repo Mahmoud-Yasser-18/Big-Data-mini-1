@@ -59,6 +59,8 @@ $hadoop_home/bin/hadoop jar $hadoop_home/share/hadoop/tools/lib/hadoop-streaming
 -output $working_path/output \
 -file $working_path/mapper.py \
 -file $working_path/reducer.py \
+-file $working_path/forbidden.py \
+-file $working_path/topic_list.py \
 -mapper 'python mapper.py' \
 -reducer 'python reducer.py' 
 }&> $working_path/logs.txt
