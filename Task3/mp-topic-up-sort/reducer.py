@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 import sys
-
 word = None
 count_up = 0
 count_down = 0

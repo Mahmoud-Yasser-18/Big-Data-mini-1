@@ -1,8 +1,8 @@
 
 echo "  Getting 10 top authors in top 10 topics in top 10 subreddits 🚀🚀"
 echo "    Task: Count authors in top 10 topics in top 10 subreddits 🚀"
-#export hadoop_home="/home/mahmoud/Desktop/CIE427/hadoop-3.3.1/"
-export hadoop_home="/usr/local/hadoop-3.3.1/"
+export hadoop_home="/home/mahmoud/Desktop/CIE427/hadoop-3.3.1/"
+#export hadoop_home="~/hadoop/hadoop-3.3.1/"
 
 
 rm -rf ./mp-author-topic-count-in-subreddits/output
