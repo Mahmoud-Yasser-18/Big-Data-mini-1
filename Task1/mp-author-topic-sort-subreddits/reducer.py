@@ -23,8 +23,8 @@ for line in sys.stdin:
         value=int(value)
     except:
         continue
-    subr= key.split("_sep_")[1].replace("\n","")
-    topic= key.split("_sep_")[2].replace("\n","")
+    subr= key.split("_sep_")[1].replace("\n","").replace("_sep_","").replace("sep_","")
+    topic= key.split("_sep_")[2].replace("\n","").replace("_sep_","").replace("sep_","")
     
     if len(top_subreddits_topic_count[subr][topic])>0:    
         if value>top_subreddits_topic_count[subr][topic][0][0] or len(top_subreddits_topic_count[subr][topic])<10:

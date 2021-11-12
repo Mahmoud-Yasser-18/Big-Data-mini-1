@@ -1,7 +1,11 @@
 # extract topic from Body
-import time 
+import time
 import re
-from forbidden import forbidden_words 
+from forbidden import forbidden_words
+import nltk
+
+import nltk
+from nltk import word_tokenize
 
 def extract_topic(body_text, subreddit,spaCy=False,debug=False):
     if body_text=="[deleted]":
@@ -10,21 +14,19 @@ def extract_topic(body_text, subreddit,spaCy=False,debug=False):
     body_text=re.sub(r"""\^""", ' ', body_text, flags=re.MULTILINE)
     body_text=re.sub(r"""\-""", ' ', body_text, flags=re.MULTILINE)
     body_text=re.sub(r"""\|""", ' ', body_text, flags=re.MULTILINE)
-    body_text=re.sub(r"""\s\s+""", ' ', body_text, flags=re.MULTILINE)
     body_text=" "+body_text+" "
-    
+    body_text=re.sub(r"""\s\s+""", ' ', body_text, flags=re.MULTILINE)
     body_text=re.sub(r"""[^\w]\.?\:?\;?\'?\"?\~?\@?\#?\$?\%?\^?\&?\*?\(?\)?""", ' ', body_text, flags=re.MULTILINE)
     body_text=re.sub(r"""\s[\w]\s""", ' ', body_text, flags=re.MULTILINE)
-    print(body_text)
-
+    body_text=re.sub(r"""\s\s+""", ' ', body_text, flags=re.MULTILINE)
     resultwords  = [word for word in body_text.split(" ") if " "+word.lower()+" " not in forbidden_words and word.strip()!=""]
-    print(resultwords)
-
+    text = word_tokenize(" ".join(resultwords))
+    resultwords=[ word for word,tag in nltk.pos_tag(text) if tag =="NN"]
     if not subreddit:
         return resultwords
     resultwords=[subreddit+"_sep_"+noun for noun in resultwords]
 
-    return resultwords 
+    return resultwords
 if __name__=="__main__":
     print("Using NLTK:")
     print(extract_topic("Very fast, thank you!","Asmerriddit"))
