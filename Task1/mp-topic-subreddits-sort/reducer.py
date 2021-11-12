@@ -5,8 +5,8 @@ import sys
 word = None
 count = 0
 
-# f = open("./mp-author-sort-subreddits/part-00000", "r")
-f = open("./part-00000", "r")
+f = open("./mp-author-sort-subreddits/part-00000", "r")
+#f = open("./part-00000", "r")
 top_subreddits=[line.split("\t")[0].replace("\n","") for line in f.readlines() if line != "\t\n"]
 top_subreddits_key_value={t:[] for t in top_subreddits} 
 

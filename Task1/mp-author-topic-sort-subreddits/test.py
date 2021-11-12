@@ -7,7 +7,7 @@ count = 0
 
 from collections import defaultdict
 
-f = open("./part-00000", "r")
+f = open("./mp-author-topic-sort-subreddits/part-00000", "r")
 
 top_topics_subreddits=[line.split("\t")[1].split("_sep_") for line in f.readlines() if line != "\t\n"]
 global_dict = defaultdict(list)

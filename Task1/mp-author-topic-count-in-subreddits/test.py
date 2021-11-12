@@ -10,8 +10,8 @@ import sys
 # Option or NLP: NLTK, spaCy
 from collections import defaultdict
 
-#f = open("./mp-author-topic-count-in-subreddits/part-00000", "r")
-f = open("./part-00000", "r")
+f = open("./mp-author-topic-count-in-subreddits/part-00000", "r")
+#f = open("./part-00000", "r")
 top_topics_subreddits=[line.split("\t")[1].split("_sep_") for line in f.readlines() if line != "\t\n"]
 global_dict = defaultdict(list)
 for subreddit,topic in top_topics_subreddits:

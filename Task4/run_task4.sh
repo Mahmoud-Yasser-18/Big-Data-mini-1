@@ -8,7 +8,8 @@ rm -rf './mp-emotion-count/logs.txt'
 
 
 echo "Starting maps-reduce jobs 🚀🚀🚀🚀"
-export hadoop_home="/usr/local/hadoop-3.3.1/"
+export hadoop_home="/home/mahmoud/Desktop/CIE427/hadoop-3.3.1/"
+
 
 echo "  Emothion analysis for top subreddits 🚀🚀"
 echo "    Task: counting emotion for subreddits 🚀"
