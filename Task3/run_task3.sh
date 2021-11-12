@@ -66,6 +66,8 @@ $hadoop_home/bin/hadoop jar $hadoop_home/share/hadoop/tools/lib/hadoop-streaming
 }&> $working_path/logs.txt
 rm mapper.py 
 rm reducer.py
+rm forbidden.py 
+rm topic_list.py
 
 export check_word=$(tail -1 $working_path/logs.txt)
 if [[ "$check_word" = *"Failed"* ]]
