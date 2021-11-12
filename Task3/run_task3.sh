@@ -10,6 +10,7 @@ rm -rf './mp-topic-up-sort/logs.txt/'
 
 echo "Starting maps-reduce jobs 🚀🚀🚀🚀"
 export hadoop_home="/home/mahmoud/Desktop/CIE427/hadoop-3.3.1/"
+#export hadoop_home="/usrs/bin/hadoop-3.3.1/"
 
 
 echo "  Getting Top topics that has the most upvotes and the most down votes 🚀🚀"

@@ -21,6 +21,7 @@ rm -rf ./mp-author-topic-count-in-subreddits/logs.txt
 rm -rf ./mp-author-topic-sort-subreddits/logs.txt
 echo "Starting maps-reduce jobs 🚀🚀🚀🚀"
 export hadoop_home="/home/mahmoud/Desktop/CIE427/hadoop-3.3.1/"
+#export hadoop_home="/usrs/bin/hadoop-3.3.1/"
 
 
 echo "  Getting the top subreddits 🚀🚀"

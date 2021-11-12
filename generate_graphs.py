@@ -27,6 +27,7 @@ f=open('./all_outputs/sub.txt','r')
 lines=f.readlines()
 sub_list=[line.split('\t')[0] for line in lines ][::-1]
 sub_count_list=[int(line.split('\t')[1].replace("\n","")) for line in lines ][::-1]
+
 plot_bar(left,sub_count_list,sub_list,['black'],"Top Subreddits",'Replies',"Replies per top Subreddits")
 ##############################################################################
 
