@@ -36,4 +36,3 @@ rm -rf './Task3/mp-topic-up-sort/logs.txt/'
 rm -rf './Task4/mp-emotion-count/output'
 rm -rf './Task4/mp-emotion-count/logs.txt'
 
-rm -rf './all_outputs/'
