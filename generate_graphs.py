@@ -21,15 +21,13 @@ def plot_bar(left,height,tick_label,colors,xlabel,ylabel,title):
     plt.show()
 
 
-## Reading files
+## Reading files and ploting 
 
 f=open('./all_outputs/sub.txt','r')
 lines=f.readlines()
 sub_list=[line.split('\t')[0] for line in lines ][::-1]
 sub_count_list=[int(line.split('\t')[1].replace("\n","")) for line in lines ][::-1]
-print(sub_list)
-print(sub_count_list)
-plot_bar(left,sub_count_list,sub_list,['green'],"Top Subreddits",'Replies',"Replies per top Subreddits")
+plot_bar(left,sub_count_list,sub_list,['black'],"Top Subreddits",'Replies',"Replies per top Subreddits")
 ##############################################################################
 
 
