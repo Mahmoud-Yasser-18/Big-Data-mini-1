@@ -13,7 +13,8 @@ from topic_list import extract_topic
 # Option or NLP: NLTK, spaCy
 
 f = open("./mp-topic-count-in-subreddits/part-00000", "r")
-top_subreddits=[line.split("\t")[1].replace("\n","") for line in f.readlines() if line != "\t\n"]
+#f = open("./part-00000", "r")
+top_subreddits=[line.split("\t")[0].replace("\n","") for line in f.readlines() if line != "\t\n"]
 
 
 for line in sys.stdin:

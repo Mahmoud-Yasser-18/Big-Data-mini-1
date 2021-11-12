@@ -17,14 +17,14 @@ for line in sys.stdin:
     except:
         continue
     try:
-        subr= line.split("\t")[0].split("_sep_")[1].replace("\n","")
+        subr= line.split("\t")[0].split("_sep_")[0].replace("\n","")
         if value>top_subreddits_key_value[subr][0][0] or len(top_subreddits_key_value)<10:
             top_subreddits_key_value[subr].append((value,key))
             top_subreddits_key_value[subr]=sorted(top_subreddits_key_value[subr])[-10:]
             
     except:
         try:
-            subr= line.split("\t")[0].split("_sep_")[1].replace("\n","")
+            subr= line.split("\t")[0].split("_sep_")[0].replace("\n","")
             top_subreddits_key_value[subr].append((value,key))
         except:
             pass

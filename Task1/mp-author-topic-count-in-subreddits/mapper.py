@@ -14,7 +14,7 @@ f = open("./mp-author-topic-count-in-subreddits/part-00000", "r")
 #f = open("./part-00000", "r")
 top_topics_subreddits=[line.split("\t")[0].split("_sep_") for line in f.readlines() if line != "\t\n"]
 global_dict = defaultdict(list)
-for topic,subreddit  in top_topics_subreddits:
+for subreddit,topic  in top_topics_subreddits:
     global_dict[subreddit.replace("\n","")].append(topic.replace("\n",""))
 for line in sys.stdin:
     try: 
