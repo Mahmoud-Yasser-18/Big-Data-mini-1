@@ -11,14 +11,16 @@ def extract_topic(body_text, subreddit,spaCy=False,debug=False,use_nltk=False):
     if body_text=="[deleted]":
         return []
     body_text=re.sub(r"""(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,;@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])""", ' ',body_text, flags=re.MULTILINE)
-    body_text=re.sub(r"""[^a-z ]+^""", ' ', body_text, flags=re.MULTILINE)
+    body_text=re.sub(r"""[^a-z^ ]+^""", ' ', body_text, flags=re.MULTILINE)
     body_text=" "+body_text+" "
-    body_text=re.sub(r"""\s[\w]\s""", ' ', body_text, flags=re.MULTILINE)
+    body_text=re.sub(r"""\'+""", ' ', body_text, flags=re.MULTILINE)
+    body_text=re.sub(r"""\"+""", ' ', body_text, flags=re.MULTILINE)
+    body_text=re.sub(r"""\s\w\w?\s""", ' ', " "+body_text+" ", flags=re.MULTILINE)
     body_text=re.sub(r"""\s\s+""", ' ', body_text, flags=re.MULTILINE)
     if use_nltk:
         resultwords=[ word for word,tag in nltk.pos_tag(body_text.split(" ")) if tag =="NN"]
     else:
-        resultwords  = [word for word in body_text.split(" ") if " "+word.lower()+" " not in forbidden_words and word.strip()!=""]
+        resultwords  = [word for word in body_text.split(" ") if " "+word.strip().lower()+" " not in forbidden_words and word.strip()!=""]
 
     if not subreddit:
         return resultwords

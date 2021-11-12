@@ -1,7 +1,7 @@
 pronouns=[" i "," me "," my "," mine "," we "," us "," our "," ours "," you "," you "," your "," yours "," you "," you "," your "," yours "," he "," she "," it "," him "," her "," it "," his "," her "," hers "," its "," they "," them "," their "," theirs"]
 
 
-Determiners= [ " the ", " a ", " an ", " this ", " that ", " these ", " those ", " my ", " your ", " his ", " her ", " its ", " our ", " their ", " a few ", " a little ", " much ", " many ", " a lot of " , " most ", " some ", " any ", " enough ", " one ", " ten ", " thirty ", " all ", " both ", " half ", " either ", " neither ", " each ", " every ", " other ", " another ", " such ", " what ", " rather ", " quite "]
+Determiners= [" isn "," don ", " re "," m ", " s ", " ve "," ll "," t "," didn "," doesn "," d ", " the ", " a ", " an ", " this ", " that ", " these ", " those ", " my ", " your ", " his ", " her ", " its ", " our ", " their ", " a few ", " a little ", " much ", " many ", " a lot of " , " most ", " some ", " any ", " enough ", " one ", " ten ", " thirty ", " all ", " both ", " half ", " either ", " neither ", " each ", " every ", " other ", " another ", " such ", " what ", " rather ", " quite "]
 
 
 wh_list=[ " what ", " who ", " whom ", " whose ", " which ", " when ", " where ", " why" ]
