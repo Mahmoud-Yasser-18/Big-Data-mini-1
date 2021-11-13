@@ -6,7 +6,9 @@ import json
 
 
 for line in sys.stdin:
-    if nltk.pos_tag([line.split("\t")[0].split("_sep_")[1]])[0][1] == "NN":
-        print(line)
-
+    try :
+        if nltk.pos_tag([line.split("\t")[0].split("_sep_")[1]])[0][1] == "NN":
+            print(line)
+    except:
+        pass
 

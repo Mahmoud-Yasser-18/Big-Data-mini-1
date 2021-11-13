@@ -35,9 +35,9 @@ $hadoop_home/bin/hadoop jar $hadoop_home/share/hadoop/tools/lib/hadoop-streaming
 -file $working_path/mapper.py \
 -file $working_path/reducer.py \
 -mapper 'python mapper.py' \
--reducer 'python reducer.py' 
+-reducer 'python reducer.py'
 }&> $working_path/logs.txt
-rm mapper.py 
+rm mapper.py
 rm reducer.py
 export check_word=$(tail -1 $working_path/logs.txt)
 
@@ -62,9 +62,9 @@ $hadoop_home/bin/hadoop jar $hadoop_home/share/hadoop/tools/lib/hadoop-streaming
 -file $working_path/mapper.py \
 -file $working_path/reducer.py \
 -mapper 'python mapper.py' \
--reducer 'python reducer.py' 
+-reducer 'python reducer.py'
 }&> $working_path/logs.txt
-rm mapper.py 
+rm mapper.py
 rm reducer.py
 export check_word=$(tail -1 $working_path/logs.txt)
 
@@ -98,9 +98,9 @@ $hadoop_home/bin/hadoop jar $hadoop_home/share/hadoop/tools/lib/hadoop-streaming
 -file $working_path/mapper.py \
 -file $working_path/reducer.py \
 -mapper 'python mapper.py' \
--reducer 'python reducer.py' 
+-reducer 'python reducer.py'
 }&> $working_path/logs.txt
-rm mapper.py 
+rm mapper.py
 rm reducer.py
 
 export check_word=$(tail -1 $working_path/logs.txt)
@@ -130,9 +130,9 @@ $hadoop_home/bin/hadoop jar $hadoop_home/share/hadoop/tools/lib/hadoop-streaming
 -file $working_path/mapper.py \
 -file $working_path/reducer.py \
 -mapper 'python mapper.py' \
--reducer 'python reducer.py' 
+-reducer 'python reducer.py'
 }&> $working_path/logs.txt
-rm mapper.py 
+rm mapper.py
 rm reducer.py
 
 export check_word=$(tail -1 $working_path/logs.txt)
@@ -162,9 +162,9 @@ $hadoop_home/bin/hadoop jar $hadoop_home/share/hadoop/tools/lib/hadoop-streaming
 -file $working_path/topic_list.py \
 -file $working_path/forbidden.py \
 -mapper 'python mapper.py' \
--reducer 'python reducer.py' 
+-reducer 'python reducer.py'
 }&> $working_path/logs.txt
-rm mapper.py 
+rm mapper.py
 rm reducer.py
 rm './forbidden.py'
 rm './topic_list.py'
